@@ -1,9 +1,13 @@
 ---
 layout: post
-title:  "mysql索引"
-date:   2016-03-17 16:01:00
-categories: javascript
+title:  "test"
+date:   2015-12-31 23:06:05
+categories: php
+excerpt: History Api 用法, pushState, replaceState
 ---
+
+* content
+{:toc}
 
 ## 前置索引
 ALTER TABLE wx_union ADD KEY(openid(10));
