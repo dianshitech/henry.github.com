@@ -11,15 +11,15 @@ excerpt: JavaScript 算法，typeof instanceof Object.prototype.toString.apply()
 
 ## 题目
 
-题目来自 [慕课网 JavaScript 深入浅出 1-6 编程练习](http://imooc.com/code/5760)    
+题目来自 [慕课网 JavaScript 深入浅出 1-6 编程练习](http://imooc.com/code/5760)
 
-请在 index.html 文件中，编写 arraysSimilar 函数，实现判断传入的两个数组是否相似。具体需求：    
+请在 index.html 文件中，编写 arraysSimilar 函数，实现判断传入的两个数组是否相似。具体需求：
 
 1. 数组中的成员类型相同，顺序可以不同。例如 [1, true] 与 [false, 2] 是相似的。
 2. 数组的长度一致。
 3. 类型的判断范围，需要区分: String, Boolean, Number, undefined, null, 函数, 日期, window.
 
-当以上全部满足，则返回**"判定结果:通过"**，否则返回**"判定结果:不通过"**。    
+当以上全部满足，则返回**"判定结果:通过"**，否则返回**"判定结果:不通过"**。
 
 题目给出了 index.html 如下：
 
@@ -28,17 +28,17 @@ excerpt: JavaScript 算法，typeof instanceof Object.prototype.toString.apply()
 	<head>
 	    <meta http-equiv="Content-Type" content="text/html; charset=gb18030">
 	    <title>Untitled Document</title>
-	    
+
 	</head>
 	<body>
-	    <script type="text/javascript">   
+	    <script type="text/javascript">
 	        /*
-	         * param1 Array 
+	         * param1 Array
 	         * param2 Array
 	         * return true or false
 	         */
 	        function arraysSimilar(arr1, arr2){
-	        
+
 	        }
 	    </script>
 	    <script src="testData.js"></script>
@@ -102,7 +102,7 @@ excerpt: JavaScript 算法，typeof instanceof Object.prototype.toString.apply()
 	        expect: false
 	    }];
 
-	    //使用for循环, 通过arraysSimilar函数验证以上数据是否相似，如相似显示“通过”,否则"不通过",所以大家要完成arraysSimilar函数,具体要求，详见任务要求。    
+	    //使用for循环, 通过arraysSimilar函数验证以上数据是否相似，如相似显示“通过”,否则"不通过",所以大家要完成arraysSimilar函数,具体要求，详见任务要求。
 	    for (var i = 0; i < cases.length; i++) {
 	        if (arraysSimilar(cases[i].arr1, cases[i].arr2) !== cases[i].expect) {
 	            document.write("不通过！case" + (i + 1) + "不正确！arr1=" + JSON.stringify(cases[i].arr1) + ", arr2=" + JSON.stringify(cases[i].arr2) + " 的判断结果不是" + cases[i].expect);
@@ -124,11 +124,11 @@ excerpt: JavaScript 算法，typeof instanceof Object.prototype.toString.apply()
 
 ### 思路
 
-通过观察测试用例，可以发现，最后三个用例有不是数组的。所以我们可以先判断传入的参数是否是数组。   
-又因为题目中要求数组长度必须一致，这也是第二个限制条件。   
-最后再区分具体的类型。   
+通过观察测试用例，可以发现，最后三个用例有不是数组的。所以我们可以先判断传入的参数是否是数组。
+又因为题目中要求数组长度必须一致，这也是第二个限制条件。
+最后再区分具体的类型。
 
-理清思路我们可以分为以下步骤：   
+理清思路我们可以分为以下步骤：
 
 1. 判断传入的参数是否为数组 (使用 `instanceof` 方法)
 2. 检查两个数组长度是否一致
@@ -150,7 +150,7 @@ JavaScript代码如下
 	 * 3. 类型的判断范围，需要区分:String, Boolean, Number, undefined, null, 函数，日期, window.
 	 *
 	 * 当以上全部满足，则返回"判定结果:通过"，否则返回"判定结果:不通过"。
-	 * ===================================================== 
+	 * =====================================================
 	 */
 
 	/*
@@ -274,8 +274,8 @@ JavaScript代码如下
 
 ## 总结
 
-* 上述代码完美的跑完所有的测试用例，读者 [点击这里查看结果](http://gaohaoyang.github.io/javascript-test/arraysSimilar/)，并且可以按 `f12` 看 Console 信息， 里面有代码的执行过程。  
+* 上述代码完美的跑完所有的测试用例，读者 [点击这里查看结果](http://henryzj.github.io/blog/javascript-test/arraysSimilar/)，并且可以按 `f12` 看 Console 信息， 里面有代码的执行过程。
 * 当然你也可以复制本文的 JavaScript 代码，在 [慕课网的习题](http://imooc.com/code/5760) 下跑一下，也可以看到 `判定结果:通过` 的结果
-* 完整源代码在我的 GitHub [javascript-test/arraysSimilar/](https://github.com/Gaohaoyang/javascript-test/tree/master/arraysSimilar) 仓库中   
+* 完整源代码在我的 GitHub [javascript-test/arraysSimilar/](https://github.com/Gaohaoyang/javascript-test/tree/master/arraysSimilar) 仓库中
 * 其实我的代码逻辑并不复杂，有点**空间换时间**的感觉，执行效率应该是较高的。没有用 JavaScript 封装的任何函数，完全是自己写的。其实代码除去 `console.log()` 也并没有多少行。
 * 各位读者有什么好的想法欢迎留言交流！

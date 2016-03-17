@@ -23,15 +23,15 @@ excerpt: History Api 用法, pushState, replaceState
 这里我将问题描述如下：
 
 > 前后端彻底分离的情况下，页面跳转页全部由前端控制。那么如何更好的处理动态url地址？
-> 例如本问题的url为 
+> 例如本问题的url为
 > https://www.zhihu.com/question/38802932
 > 这肯定是用后台路由处理的url
-> 
+>
 > 纯前端怎么处理？用hash吗，如下:
 > https://www.zhihu.com/question#38802932
 > 那如果本页跳转，只改变hash的话，页面不会刷新。
 > 使用`location.reload()`倒是可以解决。
-> 
+>
 > **但总觉得这样处理不够优雅。大家在工作中是如何处理此类场景的？还是用传统的后台路由来提供动态url？**
 
 
@@ -58,7 +58,7 @@ excerpt: History Api 用法, pushState, replaceState
 * `back()`
 
     在历史记录中后退
-    
+
         history.back();
 
 * `forward()`
@@ -78,17 +78,17 @@ excerpt: History Api 用法, pushState, replaceState
     **go()不填参数或参数为go(0)时，页面会刷新，即`history.go()`或`history.go(0)`相当于`location.reload()`**
 
 * `length`
-    
+
     `length`为history的属性，显示history长度。
 
-本节在线demo见：[History & pjax demo](http://gaohaoyang.github.io/history-pjax-demo/) 源代码：[]()
+本节在线demo见：[History & pjax demo](http://henryzj.github.io/blog/history-pjax-demo/) 源代码：[]()
 
 **经过亲自测试，`history`对象只记录同一个 tab 页内的历史。如果是在新窗口打开的，则无效。如：在a标签中添加`target="_blank"`，或按住`ctrl`点击，这类场景下，在新的tab页中，`history`对象也是新的。**
 
 **且`history`对象记录的信息与是否同源也无关，所以唯一要满足的就是同一个标签页。**
 
 ### `pushState()`, `replaceState()`
-    
+
 HTML5 引进了`history.pushState()`方法和`history.replaceState()`方法，它们允许你逐条地添加和修改历史记录条目，能够在不加载新页面的情况下没改变浏览器的URL。这些方法可以协同`window.onpopstate`事件一起工作。
 
 使用`history.pushState()`会改变`referrer`的值，而在你调用方法后创建的  XMLHttpRequest 对象会在 HTTP 请求头中使用这个值。`referrer的`值则是创建  XMLHttpRequest 对象时所处的窗口的 URL。
@@ -100,7 +100,7 @@ HTML5 引进了`history.pushState()`方法和`history.replaceState()`方法，�
     执行`pushState`后，可以在不加载新页面的情况下，更改url。同时`history`栈中新增一条数据。
 
     例如，我们有这样一段代码：
-    
+
         <button id="push1">pushState()</button>
 
         document.querySelector('#push1').addEventListener('click', function() {
@@ -109,15 +109,15 @@ HTML5 引进了`history.pushState()`方法和`history.replaceState()`方法，�
         });
 
     当点击按钮的时候，页面不会刷新，但`url`地址的最后已经变为`pushState.html`。这一点非常像`hash`的作用，但比`hash`更优雅。
-    
-    
+
+
 * `replaceState(any data, string title, [string url])`
 
     与`pushState()`类似，只是在`history`栈中不是新增记录，而是替换一条记录。
 
 **需要注意的是：**`pushState()`和`replaceState()`方法存在安全方面的限制，本地测试是无效的，会报错，可以简单放到任何服务端测试，或者使用`http-server`开启简单服务器，通过访问`localhost`来查看效果。
 
-本节demo见：[History & pjax demo - pushState](http://gaohaoyang.github.io/history-pjax-demo/index.html)
+本节demo见：[History & pjax demo - pushState](http://henryzj.github.io/blog/history-pjax-demo/index.html)
 
 ## pjax
 
