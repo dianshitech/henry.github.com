@@ -1,6 +1,7 @@
 # Site settings
 title: Henry Blog
 SEOTitle: 郑江的博客 | Henry Blog
+header-img: img/home-bg.jpg
 email: 79095956@qq.com
 url: "http://henryzj.github.io/blog/"              # your host, for absolute URL
 baseurl: "/blog"                             # for example, '/blog' if your blog hosted on 'host/blog'
