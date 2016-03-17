@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "mysql索引"
-date:   2015-12-31 23:06:05
+date:   2016-03-17 17:38:05
 categories: php
-excerpt: History Api 用法, pushState, replaceState
+excerpt: mysql index
 ---
 
 * content
