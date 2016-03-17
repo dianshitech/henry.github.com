@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "test"
+title:  "mysql索引"
 date:   2015-12-31 23:06:05
 categories: php
 excerpt: History Api 用法, pushState, replaceState
