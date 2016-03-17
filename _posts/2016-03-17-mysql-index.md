@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "mysql索引"
-date:   2016-03-16 14:25:30
+title:  mysql索引
+date:   2016-03-16
 categories: php
 excerpt: mysql索引用法
 ---
