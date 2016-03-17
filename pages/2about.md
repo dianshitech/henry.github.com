@@ -24,7 +24,7 @@ icon: glyphicon-heart
 ### 联系我
 
 * email：[79095956@qq.com](mailto:{{ site.email }})
-* 79095956
+* QQ: 79095956
 
 ---
 
