@@ -18,7 +18,7 @@ markdown: kramdown
 gems: [jekyll-paginate]
 
 paginate: 10
-paginate_path: "http://henryzj.github.io/blog/page:num"
+paginate_path: "page:num"
 
 # highlight
 # 本地用rouge, github上用pygments
