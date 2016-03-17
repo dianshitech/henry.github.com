@@ -3,6 +3,7 @@ layout: post
 title:  "mysql 索引"
 date:   2016-03-17 14:25:30
 categories: php
+excerpt: php, mysql
 ---
 
 * content
