@@ -2,7 +2,7 @@
 layout: post
 title:  mysql索引
 date:   2016-03-16
-categories: php
+categories: mysql
 excerpt: mysql索引用法
 ---
 
