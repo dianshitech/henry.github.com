@@ -12,6 +12,8 @@ excerpt: mysql索引用法
 ## 前置索引
 ALTER TABLE wx_union ADD KEY(openid(10));
 
+MySQL 前缀索引能有效减小索引文件的大小，提高索引的速度。但是前缀索引也有它的坏处：MySQL 不能在 ORDER BY 或 GROUP BY 中使用前缀索引，也不能把它们用作覆盖索引(Covering Index)。
+
 ## mysql key_len
 * 索引字段的附加信息：可以分为变长和定长数据类型讨论，当索引字段为定长数据类型，比如char，int，datetime，需要有是否为空的标记，这个标记需要占用1个字节；对于变长数据类型，比如：varchar，除了是否为空的标记外，还需要有长度信息，需要占用2个字节；
 
