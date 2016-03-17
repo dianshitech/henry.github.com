@@ -19,8 +19,11 @@ ALTER TABLE wx_union ADD KEY(openid(10));
 (备注：当字段定义为非空的时候，是否为空的标记将不占用字节)
 
 如：`user`表为utf-8.索引字段 `uid` 为int(10)，不允许为空 则key_len = 4 （int是占4个字符）
+
 如：`user`表为utf-8.索引字段 `age` 为int(10)，允许为空 则key_len = 4 + 1 （int是占4个字符）
+
 如：`user`表为utf-8.索引字段 `user_name` 为varchar(50)，允许为空 则key_len = 50 * 3 + 2 + 1 = 153
+
 如：`user`表为gbk.  索引字段 `user_name` 为varchar(50)，不允许为空  则key_len = 50 * 2 + 2 = 102
 
 
