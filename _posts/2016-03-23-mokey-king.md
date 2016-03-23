@@ -29,7 +29,7 @@ excerpt: php猴王问题
                     exit();
                 }
 
-                if (++$i==$m){
+                if (++$i == $m){
                    echo $monkey[$k] .'踢出去<br />';
                    unset($monkey[$k]);  //把变量 清除
                    $i = 0;                //指针归位
