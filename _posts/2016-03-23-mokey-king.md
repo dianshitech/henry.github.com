@@ -15,29 +15,29 @@ excerpt: php猴王问题
 
 // 如此不停的进行下去， 直到最后只剩下一只猴子为止，那只猴子就叫做大王。
 
-    public function findKingAction()
-    {
-        $m = 5;
-        $n = 100;
-        $monkey = range(1,$n); //构建猴子数组
-        $i = 0;
+        public function findKingAction()
+        {
+            $m = 5;
+            $n = 100;
+            $monkey = range(1,$n); //构建猴子数组
+            $i = 0;
 
-        //遍历猴子数组
-        while (list($k, $value) = each($monkey)){
-            if (count($monkey) == 1){
-                echo $value . "是猴王";
-                exit();
-            }
+            //遍历猴子数组
+            while (list($k, $value) = each($monkey)){
+                if (count($monkey) == 1){
+                    echo $value . "是猴王";
+                    exit();
+                }
 
-            if (++$i==$m){
-               echo $monkey[$k] .'踢出去<br />';
-               unset($monkey[$k]);  //把变量 清除
-               $i = 0;                //指针归位
-            }
+                if (++$i==$m){
+                   echo $monkey[$k] .'踢出去<br />';
+                   unset($monkey[$k]);  //把变量 清除
+                   $i = 0;                //指针归位
+                }
 
-            //如果已经数到最后的话  则继续进行下一轮的循环
-            if (false === current($monkey)){
-                reset($monkey);
+                //如果已经数到最后的话  则继续进行下一轮的循环
+                if (false === current($monkey)){
+                    reset($monkey);
+                }
             }
         }
-    }
