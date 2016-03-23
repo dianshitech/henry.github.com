@@ -41,3 +41,14 @@ excerpt: php猴王问题
                 }
             }
         }
+
+NOTE: link @http://php.net/manual/zh/function.each.php
+
+*在执行 each() 之后，数组指针将停留在数组中的下一个单元或者当碰到数组结尾时停留在最后一个单元。如果要再用 each 遍历数组，必须使用 reset()。
+
+*each() 经常和 list() 结合使用来遍历数组
+
+*current() 函数返回当前被内部指针指向的数组单元的值，并不移动指针。如果内部指针指向超出了单元列表的末端，current() 返回 FALSE。
+
+*Warning
+此函数可能返回布尔值 FALSE，但也可能返回等同于 FALSE 的非布尔值。请阅读 布尔类型章节以获取更多信息。应使用 === 运算符来测试此函数的返回值。
