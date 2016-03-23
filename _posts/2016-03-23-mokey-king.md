@@ -18,9 +18,10 @@ excerpt: php猴王问题
         public function findKingAction()
         {
             $m = 5;
-            $n = 100;
+            $n = 9;
             $monkey = range(1,$n); //构建猴子数组
             $i = 0;
+
 
             //遍历猴子数组
             while (list($k, $value) = each($monkey)){
@@ -29,22 +30,22 @@ excerpt: php猴王问题
                     exit();
                 }
 
-                if (++$i == $m){
+                if (++$i==$m){
                    echo $monkey[$k] .'踢出去<br />';
                    unset($monkey[$k]);  //把变量 清除
-                   $i = 0;                //指针归位
+                   $i = 0;              //计数器归位
                 }
 
                 //如果已经数到最后的话  则继续进行下一轮的循环
                 if (false === current($monkey)){
-                    reset($monkey);
+                    reset($monkey);    // 指针从头开始
                 }
             }
         }
 
 NOTE: link @http://php.net/manual/zh/function.each.php
 
-*在执行 each() 之后，数组指针将停留在数组中的下一个单元或者当碰到数组结尾时停留在最后一个单元。如果要再用 each 遍历数组，必须使用 reset()。
+*在执行 each() 之后，数组指针将停留在数组中的下一个单元。如果要再用 each 遍历数组，必须使用 reset()。
 
 *each() 经常和 list() 结合使用来遍历数组
 
