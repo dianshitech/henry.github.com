@@ -9,12 +9,17 @@ excerpt: mysql索引用法
 * content
 {:toc}
 
-## 前置索引
+## 示例（按照查找好的id排序）
+
 SELECT *,instr(',1,10,2,4,12,7,',concat(',',id,',')) as c FROM `im_tag_info` WHERE id in (1,10,2,4,12,7) order by c asc
+
+OR
+
+SELECT *,find_in_set(`id`,'1,10,2,4,12,7') as c FROM `im_tag_info` WHERE id in (1,10,2,4,12,7) order by c asc  (推荐用法)
 
 ## INSTR(字段名, 字符串)
 
-这个函数返回字符串在某一个字段的内容中的位置, 没有找到字符串返回0，否则返回位置（从0开始）
+这个函数返回字符串在某一个字段的内容中的位置, 没有找到字符串返回0，否则返回位置（从1开始）
 
 ## CONCAT(str1,str2,…)
 
@@ -33,12 +38,16 @@ select concat_ws(',','11','22','33');
 
 mysql> SELECT LTRIM(' barbar');
 
-mysql> SELECT TRIM(LEADING '，' FROM '，，barxxx'); //删除指定首字符 如'，
+-> 'barbar'
 
--> 'barxxx'
-mysql> SELECT TRIM(BOTH '，' FROM '，，bar，，，'); //删除指定首尾字符
+mysql> SELECT TRIM(LEADING '@' FROM '@@barxxx@@'); //删除指定首字符 如'@'
+
+-> 'barxxx@@'
+
+mysql> SELECT TRIM(BOTH '@' FROM '@@bar@@'); //删除指定首尾字符
 
 -> 'bar'
-mysql> SELECT TRIM(TRAILING '，' FROM 'barxxyz，，');
 
--> 'barxxyz'
+mysql> SELECT TRIM(TRAILING '@' FROM '@@barxxyz@@'); //删除指定尾字符
+
+-> '@@barxxyz'
